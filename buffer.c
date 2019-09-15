@@ -2,7 +2,7 @@
 
 int isBufFull(NormalBuffer* buf){
     if(buf == NULL) return -1;
-    return buf->front == buf->size;
+    return buf->front == buf->size - 1;
     //because the last position is '\0';
 }
 int isBufEmpty(NormalBuffer* buf){
@@ -45,7 +45,7 @@ int ReadFromFile(int fd, NormalBuffer* buf){
     // same as the write, The function return the byte number which actually write to file.
     if(buf == NULL) return -1;
     if(isBufFull(buf)) return 0;
-    int status = read(fd, buf->ptr + buf->front, buf->size - buf->front);
+    int status = read(fd, buf->ptr + buf->front, buf->size - buf->front - 1);
     if(status > 0) buf->front += status; //in case of the status is -1;
     return status;
 }

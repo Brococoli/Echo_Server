@@ -1,15 +1,14 @@
 #ifndef agent_h
 #define AGENT_H
-#include "buffer.h"
+#include "auto_buffer.h"
 #include "socket_utils.h"
 #include "utils.h"
-#include "buffer.h"
 #include <assert.h>
 
 typedef struct {
     int fd;
     int eof;
-    NormalBuffer* buf;
+    AutoBuffer* buf;
 }Agent;
 
 #define EBUFFULL 0
