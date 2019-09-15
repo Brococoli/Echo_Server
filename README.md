@@ -4,5 +4,5 @@
 3. auto_thread_ver_dev : Echo server with unfixed length buffer, which means I can read until EWOULDBLOCK.
 
 # ps
-The above three implementions all use epoll with ET mode;
-I just want to test how big is their performance difference, but the answer is that their performance is similiar.
+1. The above three implementions all use epoll with ET mode;
+2. I just want to test how big is their performance difference, but the answer is that their performance is similiar.
